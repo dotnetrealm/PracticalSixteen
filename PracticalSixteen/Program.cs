@@ -6,7 +6,7 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-//Custom middleware for request logging
+//Custom middleware for request and response logging
 app.UseRequestLoggingMiddleware();
 
 app.UseHttpsRedirection();

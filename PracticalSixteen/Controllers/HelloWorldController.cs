@@ -6,7 +6,7 @@ namespace PracticalSixteen.Controllers
     [Route("[controller]/[action]")]
     public class HelloWorldController : ControllerBase
     {
-        private readonly ILogger<HelloWorldController> _logger;
+        readonly ILogger<HelloWorldController> _logger;
 
         public HelloWorldController(ILogger<HelloWorldController> logger)
         {
@@ -20,7 +20,7 @@ namespace PracticalSixteen.Controllers
         [HttpGet]
         public string Get()
         {
-            _logger.LogInformation("{0} method of {1}Controller is invoked.", ControllerContext.ActionDescriptor.ActionName, ControllerContext.ActionDescriptor.ControllerName);
+            _logger.LogDebug("{0} method of {1}Controller is invoked.", ControllerContext.ActionDescriptor.ActionName, ControllerContext.ActionDescriptor.ControllerName);
             return "Hello World!!";
         }
 
